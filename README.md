@@ -1,3 +1,22 @@
+## Summary Dataset
+This a summary dataset. You can train abstractive summarization model using this dataset. It contains 3 files i.e.
+`train`, `test` and `val`. Data is in `jsonl` format.
+
+Every `line` has these keys.
+```text
+id
+url
+title
+summary
+text
+```
+
+You can easily read the data with pandas
+```python
+import pandas as pd
+test = pd.read_json("summary/urdu_test.jsonl", lines=True)
+```
+
 ## POS dataset
 Urdu dataset for POS training. This is a small dataset and can be used for training parts of speech tagging for Urdu Language.
 Structure of the dataset is simple i.e.
@@ -40,6 +59,30 @@ Location
 
 `MK-PUCIT` author also provided the `Dropbox` link to download the data. [Dropbox](https://www.dropbox.com/sh/1ivw7ykm2tugg94/AAB9t5wnN7FynESpo7TjJW8la)
 
+### IJNLP 2008 dataset
+IJNLP dataset has following NER tags.
+```text
+O
+LOCATION
+PERSON
+TIME
+ORGANIZATION
+NUMBER
+DESIGNATION
+```
+
+### Jahangir dataset
+Jahangir dataset has following NER tags.
+```text
+O
+PERSON
+LOCATION
+ORGANIZATION
+DATE
+TIME
+```
+
+
 ## Datasets for Sentiment Analysis
 ### IMDB Urdu Movie Review Dataset.
 This dataset is taken from [IMDB Urdu](https://www.kaggle.com/akkefa/imdb-dataset-of-50k-movie-translated-urdu-reviews).
@@ -67,6 +110,22 @@ neg
 neu
 ```
 
+
+### Daraz Products dataset
+This dataset consists of reviews taken from Daraz. You can use it for sentiment analysis as well as spam or ham classification.
+It contains following columns.
+```text
+Product_ID
+Date
+Rating
+Spam(1) and Not Spam(0)
+Reviews
+Sentiment
+Features
+```
+Dataset is taken from [kaggle daraz](https://www.kaggle.com/datasets/naveedhn/daraz-roman-urdu-reviews)
+
+
 ### Urdu Dataset
 Here is a small dataset for sentiment analysis. It has following classifying labels 
 ```textmate
@@ -75,7 +134,7 @@ N
 O
 ```
 Link to the paper [Paper](https://www.researchgate.net/publication/338396518_Urdu_Sentiment_Corpus_v10_Linguistic_Exploration_and_Visualization_of_Labeled_Dataset_for_Urdu_Sentiment_Analysis)
-Github link to data [Urdu Corpus V1](https://github.com/MuhammadYaseenKhan/Urdu-Sentiment-Corpus)
+GitHub link to data [Urdu Corpus V1](https://github.com/MuhammadYaseenKhan/Urdu-Sentiment-Corpus)
 
 ## News Datasets
 ### Urdu News Dataset 1M
@@ -88,7 +147,7 @@ Science & Technology
 Sports
 ```
 
-### Real-Fake News dataset
+### Real-Fake News
 This dataset(`news/real_fake_news.tar.gz`) is used for classification of real and fake news in [Fake News Dataset](https://github.com/MaazAmjad/Datasets-for-Urdu-news) 
 Dataset contains following domain news.
 ```text
@@ -135,7 +194,7 @@ These articles are available on [UrduNLP](https://www.urdunlp.com/).
 
 ## Some Helpful Tips
 
-### Download Single file from Github
+### Download Single file from GitHub
 If you want to get only raw files(text or code) then use curl command i.e.
 ```shell script
 curl -LJO https://github.com/mirfan899/Urdu/blob/master/ner/uner.txt
